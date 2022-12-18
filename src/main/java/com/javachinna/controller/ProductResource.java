@@ -1,5 +1,6 @@
 package com.javachinna.controller;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -19,6 +20,7 @@ import com.javachinna.exception.ResourceNotFoundException;
 import com.javachinna.model.Product;
 import com.javachinna.service.ProductService;
 
+import io.keploy.ksql.KDriver;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -27,6 +29,17 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Path("products")
 public class ProductResource {
+	static {
+		// Print statement
+		System.out.print(
+				"Static block can be printed without main method");
+		try {
+			KDriver.WrapDriver();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 
 	private ProductService productService;
 

@@ -1,5 +1,6 @@
 package com.javachinna.config;
 
+import io.keploy.ksql.KDriver;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
@@ -8,6 +9,8 @@ import com.javachinna.controller.ProductResource;
 import com.javachinna.repo.ProductRepository;
 import com.javachinna.service.ProductService;
 import com.javachinna.service.impl.ProductServiceImpl;
+
+import java.sql.SQLException;
 
 public class AppConfig extends ResourceConfig {
 
