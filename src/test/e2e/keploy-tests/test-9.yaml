@@ -1,0 +1,40 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-9
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: /api/products
+        header:
+            accept: '*/*'
+            accept-encoding: gzip, deflate, br
+            cache-control: no-cache
+            connection: keep-alive
+            content-length: "39"
+            content-type: application/json
+            host: localhost:8080
+            postman-token: e2e92069-e408-4a48-b6db-5389b3b09304
+            user-agent: PostmanRuntime/7.30.0
+        body: |-
+            {
+                "name":"Doll",
+                "price": 200
+            }
+    resp:
+        status_code: 200
+        header: {}
+        body: Product added
+        status_message: OK
+        proto_major: 1
+        proto_minor: 1
+    objects:
+        - type: error
+          data: H4sIAAAAAAAA/wEAAP//AAAAAAAAAAA=
+    mocks:
+        - test-9-0
+    assertions:
+        noise: []
+    created: 1671360401
